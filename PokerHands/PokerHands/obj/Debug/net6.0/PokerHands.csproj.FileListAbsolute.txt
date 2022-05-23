@@ -1,0 +1,15 @@
+C:\Users\other people\source\repos\PokerHands\PokerHands\bin\Debug\net6.0\PokerHands.exe
+C:\Users\other people\source\repos\PokerHands\PokerHands\bin\Debug\net6.0\PokerHands.deps.json
+C:\Users\other people\source\repos\PokerHands\PokerHands\bin\Debug\net6.0\PokerHands.runtimeconfig.json
+C:\Users\other people\source\repos\PokerHands\PokerHands\bin\Debug\net6.0\PokerHands.dll
+C:\Users\other people\source\repos\PokerHands\PokerHands\bin\Debug\net6.0\PokerHands.pdb
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.csproj.AssemblyReference.cache
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.AssemblyInfoInputs.cache
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.AssemblyInfo.cs
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.csproj.CoreCompileInputs.cache
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.dll
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\refint\PokerHands.dll
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.pdb
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\PokerHands.genruntimeconfig.cache
+C:\Users\other people\source\repos\PokerHands\PokerHands\obj\Debug\net6.0\ref\PokerHands.dll
