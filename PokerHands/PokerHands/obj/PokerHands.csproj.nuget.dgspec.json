@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHands\\PokerHands.csproj": {}
+    "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHands\\PokerHands.csproj": {}
   },
   "projects": {
-    "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHands\\PokerHands.csproj": {
+    "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHands\\PokerHands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHands\\PokerHands.csproj",
+        "projectUniqueName": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHands\\PokerHands.csproj",
         "projectName": "PokerHands",
-        "projectPath": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHands\\PokerHands.csproj",
+        "projectPath": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHands\\PokerHands.csproj",
         "packagesPath": "C:\\Users\\other people\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHands\\obj\\",
+        "outputPath": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

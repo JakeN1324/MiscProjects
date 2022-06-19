@@ -1,11 +1,12 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    ".NETFramework,Version=v6.0": {},
+    ".NETFramework,Version=v6.0/win7-x86": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    ".NETFramework,Version=v6.0": []
   },
   "packageFolders": {
     "C:\\Users\\other people\\.nuget\\packages\\": {},
@@ -14,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHandsTests\\PokerHandsTests.csproj",
+      "projectUniqueName": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHandsTests\\PokerHandsTests.csproj",
       "projectName": "PokerHandsTests",
-      "projectPath": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHandsTests\\PokerHandsTests.csproj",
+      "projectPath": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHandsTests\\PokerHandsTests.csproj",
       "packagesPath": "C:\\Users\\other people\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\other people\\source\\repos\\PokerHands\\PokerHandsTests\\obj\\",
+      "outputPath": "C:\\Repository1\\MiscProjects\\PokerHands\\PokerHandsTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -28,15 +29,14 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net60"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net60": {
           "projectReferences": {}
         }
       },
@@ -47,24 +47,11 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      "net60": {}
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
       }
     }
   }

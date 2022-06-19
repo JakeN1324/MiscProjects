@@ -11,10 +11,27 @@ namespace PokerHands.Classes
         public int CardValue { get; set; }
         public char Suit { get; set; }
 
-        public Card(int cardValue, char suit) //convert face cards to int here. make cardValue parameter a string then convert
+        public Card(string cardValue, char suit)
         {
-            CardValue = cardValue;
+            CardValue = faceValues[cardValue];
             Suit = suit;
         }
+
+        private static readonly Dictionary<string, int> faceValues = new Dictionary<string, int>()
+        {
+            {"2", 2},
+            {"3", 3},
+            {"4", 4},
+            {"5", 5},
+            {"6", 6},
+            {"7", 7},
+            {"8", 8},
+            {"9", 9},
+            {"10", 10},
+            {"J", 11},
+            {"Q", 12},
+            {"K", 13},
+            {"A", 14}
+        };
     }
 }
