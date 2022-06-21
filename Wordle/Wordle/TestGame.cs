@@ -20,6 +20,12 @@ namespace Wordle.Classes
             int index = random.Next(words.Count);
             
             RunGame game1 = new RunGame();
+
+            Console.WriteLine("Enter any 5 letter word to guess.");
+            Console.WriteLine("Key: O = Correct letter and location, * = Correct letter but wrong location, X = Word does not contain this letter");
+            Console.WriteLine("View available letters: @");
+            Console.WriteLine("-------------------------");
+
             game1.StartGame(words[index]);
 
         }
