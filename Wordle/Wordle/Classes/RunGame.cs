@@ -26,26 +26,9 @@ namespace Wordle.Classes
 
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
-                List<char> guess = Console.ReadLine().ToCharArray().ToList();
+                List<char> guess = Console.ReadLine().ToCharArray().ToList();             
 
-                if (guess[0] == '@')
-                {
-                    Console.WriteLine("----------------------");
-                    foreach (List<char> list in keyboard)
-                    {
-                        Console.Write("|");
-                        foreach (char letter in list)
-                        {                          
-                            Console.Write(letter.ToString().ToUpper());
-                            Console.Write(" ");
-                        }
-                        Console.Write("|");
-                        Console.WriteLine();
-                    }
-                    Console.WriteLine("----------------------");
-                    continue;
-                }
-                else if (guess.Count != 5 && guess[0] != '@')
+                if (guess.Count != 5)
                 {
                     Console.WriteLine("*Only 5 letter words are accepted*");
                     Console.WriteLine("-------------------------");
@@ -69,14 +52,29 @@ namespace Wordle.Classes
                     {
                         hints[i] = 'O';
                         notGuessed[i] = '#'; //Correct letters already guessed will not be detected unless there are duplicates in the current word
+                        for (int j = 0; j < guess.Count; j++)
+                        {
+                            if (hints[j] == '*' && guess[j] == guess[i] && !notGuessed.Contains(guess[i]))
+                            {
+                                hints[j] = 'X';
+                            }
+                        }
                     }
                     else if (letters.Contains(guess[i]) && notGuessed.Contains(guess[i])) //Correct letter, wrong location
                     {
                         hints[i] = '*';
+                        //notGuessed[notGuessed.IndexOf(guess[i])] = '#';
                     }
                     else //Current word does not contain this letter
                     {
                         hints[i] = 'X';
+                    }
+                }
+
+                for (int i = 0; i < guess.Count; i++) //Removes incorrect letters from the keyboard display
+                {
+                    if (hints[i] == 'X' && !letters.Contains(guess[i]))
+                    {
                         foreach (List<char> list in keyboard)
                         {
                             if (list.Contains(guess[i]))
@@ -90,11 +88,24 @@ namespace Wordle.Classes
                 Console.WriteLine();
                 foreach (char c in hints) //Prints the hint symbols under each letter
                 {
-                    Console.Write($"{c} ");                   
+                    Console.Write($"{c} ");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("-------------------------");
+                Console.WriteLine("----------------------");
+
+                foreach (List<char> list in keyboard)
+                {
+                    Console.Write("|");
+                    foreach (char letter in list)
+                    {
+                        Console.Write(letter.ToString().ToUpper());
+                        Console.Write(" ");
+                    }
+                    Console.Write("|");
+                    Console.WriteLine();
+                }
+                Console.WriteLine("----------------------");
 
                 gameWon = true;
                 foreach (char c in hints) //Checks hints for all correct letter symbols, if not then loop restarts

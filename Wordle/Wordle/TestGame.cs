@@ -23,12 +23,12 @@ namespace Wordle.Classes
 
             Console.WriteLine("Enter any 5 letter word to guess.");
             Console.WriteLine("Key: O = Correct letter and location, * = Correct letter but wrong location, X = Word does not contain this letter");
-            Console.WriteLine("View available letters: @");
-            Console.WriteLine("-------------------------");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
 
-            game1.StartGame(words[index]);
-
+            //game1.StartGame(words[index]);
+            game1.StartGame("about");
         }
     }
 }
 
+                                                                 
