@@ -25,8 +25,7 @@ namespace Wordle.Classes
             Console.WriteLine("Key: O = Correct letter and location, * = Correct letter but wrong location, X = Word does not contain this letter");
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
 
-            //game1.StartGame(words[index]);
-            game1.StartGame("about");
+            game1.StartGame(words[index]);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Wordle.Classes
             List<char> qThroughP = new List<char>() {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
             List<char> aThroughL = new List<char>() {' ', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'};
             List<char> zThroughM = new List<char>() {' ', ' ', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ' '};
+            FileAccess data = new FileAccess();
+            List<string> validWords = data.GetWords();
             List<List<char>> keyboard = new List<List<char>>() {qThroughP, aThroughL, zThroughM};
 
             foreach (char c in letters)
@@ -26,11 +28,18 @@ namespace Wordle.Classes
 
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
-                List<char> guess = Console.ReadLine().ToCharArray().ToList();             
+                string stringGuess = Console.ReadLine();
+                List<char> guess = stringGuess.ToCharArray().ToList();             
 
                 if (guess.Count != 5)
                 {
                     Console.WriteLine("*Only 5 letter words are accepted*");
+                    Console.WriteLine("-------------------------");
+                    continue;
+                }
+                if (!validWords.Contains(stringGuess)) 
+                {
+                    Console.WriteLine("*Word not found in word list*");
                     Console.WriteLine("-------------------------");
                     continue;
                 }
