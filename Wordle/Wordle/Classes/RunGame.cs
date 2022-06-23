@@ -12,6 +12,7 @@ namespace Wordle.Classes
         {
             bool gameWon = false;
             int attempts = 0;
+            bool outOfAttempts = false;
             List<char> letters = currentWord.ToCharArray().ToList(); //The current word to guess
             List<char> notGuessed = new List<char>(); //List of letters in the current word (For identifying a correct letter with the wrong placement)
             List<char> qThroughP = new List<char>() {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
@@ -28,6 +29,12 @@ namespace Wordle.Classes
 
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
+                if (attempts > 6) //After 6 guesses the game ends
+                {
+                    outOfAttempts = true;
+                    break;
+                }
+
                 string stringGuess = Console.ReadLine();
                 List<char> guess = stringGuess.ToCharArray().ToList();             
 
@@ -103,7 +110,7 @@ namespace Wordle.Classes
                 Console.WriteLine();
                 Console.WriteLine("----------------------");
 
-                foreach (List<char> list in keyboard)
+                foreach (List<char> list in keyboard) //Displays the remaining possible letters
                 {
                     Console.Write("|");
                     foreach (char letter in list)
@@ -126,8 +133,21 @@ namespace Wordle.Classes
                     }
                 }
             }
-            Console.WriteLine("Winner!");
-            Console.WriteLine($"You guessed correctly in {attempts} attempt(s)");
+
+            if (outOfAttempts)
+            {
+                Console.WriteLine("You lose!");
+                Console.Write("The word was ");
+                foreach (char l in letters)
+                {
+                    Console.Write(l.ToString().ToUpper());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Winner!");
+                Console.WriteLine($"You guessed correctly in {attempts} attempt(s)");
+            }           
         }
     }
 }
