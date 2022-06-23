@@ -26,7 +26,7 @@ namespace Wordle.Classes
             Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
 
             game1.StartGame(words[index]);
-            //game1.StartGame("there");
+            //game1.StartGame("lunge");
         }
     }
 }

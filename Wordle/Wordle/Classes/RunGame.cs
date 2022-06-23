@@ -24,12 +24,13 @@ namespace Wordle.Classes
 
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
+                notGuessed.Clear();
                 foreach (char c in letters)
                 {
                     notGuessed.Add(c);
                 }
 
-                if (attempts > 6) //After 6 guesses the game ends
+                if (attempts == 6) //After 6 guesses the game ends
                 {
                     outOfAttempts = true;
                     break;
