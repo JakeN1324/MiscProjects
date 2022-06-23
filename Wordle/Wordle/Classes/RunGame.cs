@@ -22,11 +22,6 @@ namespace Wordle.Classes
             List<string> validWords = data.GetWords();
             List<List<char>> keyboard = new List<List<char>>() {qThroughP, aThroughL, zThroughM};
 
-            //foreach (char c in letters)
-            //{
-            //    notGuessed.Add(c);
-            //}
-
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
                 foreach (char c in letters)
@@ -84,7 +79,6 @@ namespace Wordle.Classes
                     else if (letters.Contains(guess[i]) && notGuessed.Contains(guess[i])) //Correct letter, wrong location
                     {
                         hints[i] = '*';
-                        //notGuessed[notGuessed.IndexOf(guess[i])] = '#';
                     }
                     else //Current word does not contain this letter
                     {
