@@ -22,13 +22,18 @@ namespace Wordle.Classes
             List<string> validWords = data.GetWords();
             List<List<char>> keyboard = new List<List<char>>() {qThroughP, aThroughL, zThroughM};
 
-            foreach (char c in letters)
-            {
-                notGuessed.Add(c);
-            }
+            //foreach (char c in letters)
+            //{
+            //    notGuessed.Add(c);
+            //}
 
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
+                foreach (char c in letters)
+                {
+                    notGuessed.Add(c);
+                }
+
                 if (attempts > 6) //After 6 guesses the game ends
                 {
                     outOfAttempts = true;
