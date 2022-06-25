@@ -122,6 +122,12 @@ namespace Wordle.Classes
                     Console.WriteLine();
                 }
                 Console.WriteLine("----------------------");
+                Console.Write("|");
+                Console.Write($"Attempts Remaining: {6 - attempts}");
+                Console.Write("|");
+                Console.WriteLine();
+                Console.WriteLine("----------------------");
+                Console.WriteLine();
 
                 gameWon = true;
                 foreach (char c in hints) //Checks hints for all correct letter symbols, if not then loop restarts
