@@ -65,20 +65,29 @@ namespace Wordle.Classes
 
                 for (int i = 0; i < guess.Count; i++) //Checks each letter of the guess against the current word
                 {
+                    int currentCount = 0; //Tracks the number of times the current letter appears in the word
+                    foreach (char letter in guess) 
+                    {
+                        if (letter == guess[i])
+                        {
+                            currentCount++;
+                        }
+                    }
+
                     if (guess[i] == letters[i]) //Correct letter in correct location
                     {
                         hints[i] = 'O';
                         notGuessed[i] = '#'; //Correct letters already guessed will not be detected unless there are duplicates in the current word
-                        for (int j = 0; j < guess.Count; j++)
+                        for (int j = 0; j < guess.Count; j++) //If the same letter has been guessed elsewhere in the word and marked with a *, it will be replaced by an X if the word does not contain multiple instances of that letter, since it has now been guessed correctly 
                         {
-                            if (hints[j] == '*' && guess[j] == guess[i] && !notGuessed.Contains(guess[i]))
+                            if (hints[j] == '*' && guess[j] == guess[i] && currentCount <= 1)
                             {
                                 hints[j] = 'X';
                             }
                         }
                     }
                     else if (letters.Contains(guess[i]) && notGuessed.Contains(guess[i])) //Correct letter, wrong location
-                    {
+                    {                       
                         hints[i] = '*';
                         notGuessed[notGuessed.IndexOf(guess[i])] = '#';
                     }
