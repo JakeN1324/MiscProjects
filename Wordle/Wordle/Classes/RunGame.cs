@@ -18,6 +18,8 @@ namespace Wordle.Classes
             List<char> qThroughP = new List<char>() {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'};
             List<char> aThroughL = new List<char>() {' ', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'};
             List<char> zThroughM = new List<char>() {' ', ' ', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ' '};
+            List<string> prevGuesses = new List<string>();
+            List<string> prevHints = new List<string>();
             FileAccess data = new FileAccess();
             List<string> validWords = data.GetWords();
             List<List<char>> keyboard = new List<List<char>>() {qThroughP, aThroughL, zThroughM};
@@ -25,6 +27,7 @@ namespace Wordle.Classes
             while (!gameWon) //Game repeats until all letters are guessed correctly 
             {
                 notGuessed.Clear();
+
                 foreach (char c in letters)
                 {
                     notGuessed.Add(c);
@@ -37,6 +40,8 @@ namespace Wordle.Classes
                 }
 
                 string stringGuess = Console.ReadLine();
+                Console.WriteLine();
+
                 List<char> guess = stringGuess.ToCharArray().ToList();             
 
                 if (guess.Count != 5)
@@ -53,6 +58,24 @@ namespace Wordle.Classes
                 }
                 
                 List<char> hints = new List<char>() { ' ', ' ', ' ', ' ', ' '};
+
+                for (int i = 0; i < prevGuesses.Count; i++) //Prints all previous guesses and their corresponding hints in order after each new guess
+                {
+                    for (int j = 0; j < prevGuesses[i].Length; j++)
+                    {
+                        Console.Write($"{(prevGuesses[i])[j]} ");                      
+                    }
+
+                    Console.WriteLine();
+
+                    for (int j = 0; j < prevHints[i].Length; j++)
+                    {
+                        Console.Write($"{(prevHints[i])[j]} ");
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine("---------");
+                }
                 
                 //Diplays the users guess
                 foreach (char letter in guess)
@@ -96,6 +119,9 @@ namespace Wordle.Classes
                         hints[i] = 'X';
                     }
                 }
+
+                string hintString = string.Join("", hints);
+                prevHints.Add(hintString);
 
                 for (int i = 0; i < guess.Count; i++) //Removes incorrect letters from the keyboard display
                 {
@@ -148,6 +174,7 @@ namespace Wordle.Classes
                         break;
                     }
                 }
+                prevGuesses.Add(stringGuess.ToUpper());
             }
 
             if (outOfAttempts)
