@@ -57,6 +57,8 @@ namespace Wordle.Classes
                     continue;
                 }
                 
+                Console.Clear();
+                
                 List<char> hints = new List<char>() { ' ', ' ', ' ', ' ', ' '};
 
                 for (int i = 0; i < prevGuesses.Count; i++) //Prints all previous guesses and their corresponding hints in order after each new guess
