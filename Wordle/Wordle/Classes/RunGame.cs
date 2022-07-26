@@ -91,7 +91,7 @@ namespace Wordle.Classes
                 for (int i = 0; i < guess.Count; i++) //Checks each letter of the guess against the current word
                 {
                     int currentCount = 0; //Tracks the number of times the current letter appears in the word
-                    foreach (char letter in guess) 
+                    foreach (char letter in letters) 
                     {
                         if (letter == guess[i])
                         {
@@ -111,7 +111,7 @@ namespace Wordle.Classes
                             }
                         }
                     }
-                    else if (letters.Contains(guess[i]) && notGuessed.Contains(guess[i])) //Correct letter, wrong location
+                    else if (letters.Contains(guess[i]) && notGuessed.Contains(guess[i]))  //Correct letter, wrong location
                     {                       
                         hints[i] = '*';
                         notGuessed[notGuessed.IndexOf(guess[i])] = '#';
