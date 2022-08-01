@@ -159,13 +159,18 @@ namespace Wordle.Classes
                     Console.Write("|");
                     Console.WriteLine();
                 }
+
                 Console.WriteLine("----------------------");
-                Console.Write("|");
-                Console.Write($"Attempts Remaining: {6 - attempts}");
-                Console.Write("|");
-                Console.WriteLine();
-                Console.WriteLine("----------------------");
-                Console.WriteLine();
+
+                if (attempts < 6) //Displays remaining number of attempts 
+                {                   
+                    Console.Write("|");
+                    Console.Write($"Attempts Remaining: {6 - attempts}");
+                    Console.Write("|");
+                    Console.WriteLine();
+                    Console.WriteLine("----------------------");
+                    Console.WriteLine();
+                }
 
                 gameWon = true;
                 foreach (char c in hints) //Checks hints for all correct letter symbols, if not then loop restarts
@@ -179,7 +184,7 @@ namespace Wordle.Classes
                 prevGuesses.Add(stringGuess.ToUpper());
             }
 
-            if (outOfAttempts)
+            if (outOfAttempts) //Displays final results 
             {
                 Console.WriteLine("You lose!");
                 Console.Write("The word was ");
